@@ -1,3 +1,26 @@
+"""
+supervisor.py - Clock Supervisor Network Listener & Audio Execution Engine
+
+A decentralized, lightweight Python supervisor script designed to run on 
+Termux (Android), Raspberry Pi, or desktop Linux. Asynchronously listens for 
+UDP alert triggers from remote ESP32 UDPNodes, tracks node health, and handles 
+multilingual sequential audio file playback.
+
+Features:
+ - Asynchronous zero-lag UDP event engine using non-blocking select() sockets
+ - Sequential multilingual .wav playback with precise duration parsing via wave
+ - Fault-tolerant network interface error catching (handles Android Wi-Fi drops)
+ - Automatic status polling and matrix latch clearing (Status 2 -> Status 0)
+ - Autonomous device health tracking with reconnect logging
+
+@version 1.0.0
+@date July 2026
+@author Jim McKeown
+@license MIT License
+
+Repository: https://github.com/jim-mckeown/udp-sensor-supervisor
+"""
+
 import socket
 import time
 import subprocess

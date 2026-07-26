@@ -1,10 +1,25 @@
-/*
-Version 0.2.0
-2026 July 19
-*/
+/**
+ * @file main.cpp
+ * @brief Clock Supervisor Node Firmware
+ * 
+ * ESP32-based central clock display and audio supervisor node utilizing 
+ * the UDPNode framework and a MAX7219 LED matrix display module.
+ * 
+ * Features:
+ *  - Real-time digital clock display powered by NTP time synchronization
+ *  - Non-blocking MAX7219 LED matrix driver integration
+ *  - Acts as an in-hardware Clock Supervisor listening for network alert triggers
+ *  - Standardized 3-Level Status Taxonomy (Status 2 = Critical Latch)
+ *  - On-the-fly timezone, DST, and parameter updates via LittleFS and UDP port 8888
+ *  - Integrated Over-The-Air (OTA) flashing support
+ * 
+ * @version 1.0.0
+ * @date July 2026
+ * @author Jim McKeown
+ * @license MIT License
+ */
 
 #include <Arduino.h>
-//#include "ParamServer.h"
 #include "UDPNode.h"
 #include <MD_Parola.h>
 #include <MD_MAX72xx.h>
